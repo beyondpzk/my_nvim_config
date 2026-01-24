@@ -1,0 +1,63 @@
+/* 强制把目录固定在左侧 */
+.table-of-contents {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  overflow-y: auto;
+  background-color: var(--bg-color); /* 跟随主题背景 */
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  z-index: 1000;
+}
+
+/* 让正文向右挪，给目录腾出空间 */
+.markdown-body {
+  margin-left: 260px !important;
+  max-width: 900px !important; /* 防止正文太宽 */
+}
+
+/* ====================
+   表格样式增强
+   ==================== */
+
+/* 1. 基础边框和间距 */
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%; /* 让表格占满宽度 */
+  margin-bottom: 16px;
+}
+
+/* 2. 单元格边框 */
+table th,
+table td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5; /* 浅灰色实线边框 */
+}
+
+/* 3. 表头背景色 */
+table th {
+  font-weight: 600;
+  background-color: #f6f8fa;
+}
+
+/* 4. 隔行变色 (让表格更易读) */
+/* table tr:nth-child(2n) { */
+  /* background-color: #f6f8fa; */
+  /* background-color: #dfe2e5; */
+/* } */
+
+/* 5. 深色模式适配 */
+/* @media (prefers-color-scheme: dark) { */
+/*   table th, table td { */
+/*     border-color: #30363d; */
+/*   } */
+/*   table th { */
+/*     background-color: #161b22; */
+/*   } */
+/*   table tr:nth-child(2n) { */
+/*     background-color: #161b22; */
+/*   } */
+/* } */
