@@ -14,8 +14,8 @@
 
 /* 让正文向右挪，给目录腾出空间 */
 .markdown-body {
-  margin-left: 260px !important;
-  max-width: 900px !important; /* 防止正文太宽 */
+  margin-left: 100px !important;
+  max-width: 1600px !important; /* 防止正文太宽 */
 }
 
 /* ====================
@@ -61,3 +61,28 @@ table th {
 /*     background-color: #161b22; */
 /*   } */
 /* } */
+
+
+/* 水印样式 */
+.markdown-body::before {
+  /* 这里改成你想显示的文字 */
+  content: "author: zhengpengkun"; 
+  
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg); /* 旋转 45 度 */
+  font-size: 80px;       /* 字体大小 */
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.08); /* 颜色：黑色，透明度 0.08 (很淡) */
+  pointer-events: none;  /* 让鼠标可以穿透水印点击下面的字 */
+  z-index: 9999;         /* 保证浮在最上面 */
+  white-space: nowrap;
+}
+
+/* 深色模式适配 */
+@media (prefers-color-scheme: dark) {
+  .markdown-body::before {
+    color: rgba(255, 255, 255, 0.05); /* 深色模式下用淡淡的白色 */
+  }
+}
