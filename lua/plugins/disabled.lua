@@ -1,7 +1,7 @@
 return {
   -- 1. 告诉 Mason：别再自动装 pyright 了！
   {
-    "masson-org/mason.nvim",
+    "mason-org/mason.nvim",
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
       -- 从自动安装列表中剔除 pyright
